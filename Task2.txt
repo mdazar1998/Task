@@ -60,7 +60,7 @@ KiB Swap:   839676 total,   839676 free,        0 used.  3375580 avail Mem
   271 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 ata_sff
 
 
-Test the connectivity between 2 nodes?
+3.Test the connectivity between 2 nodes?
 
 Node 1:
 
