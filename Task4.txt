@@ -1,0 +1,121 @@
+"Syntax for all loops in shell scripting"
+
+LOOPS:
+
+1. While Loop
+
+Syntax:
+	while [ condition/test ]
+	do
+		< Commands >
+	done
+
+2. Until Loop
+
+Syntax:
+	until [ condition/test ]
+	do
+		< Commands >
+	done
+
+3. For Loop
+
+Syntax:
+	for var in <list>
+	do
+		< Commands > 
+	done
+
+Alternate Syntax:
+	for (( value ; test/condtion ; itteration ));
+	do
+		< Commands >
+	done 
+
+4. Nested For Loop
+
+Syntax:
+	for var in <list>
+	do
+		for var in <list>
+		do
+			< Commands> 
+		done
+	done
+
+
+CONDITIONAL STATEMENTS:
+
+1. if  Statement
+
+Syntax:
+	if [ expression ]
+	then
+		statement
+	fi
+
+2. if else statement
+
+Syntax:
+	if [ expression ]
+	then
+		statement 1
+	else
+		statement 2
+	fi
+
+3. Else If Ladder Statement / if..elif..else..fi Statement
+
+Syntax:
+	if [ expression 1 ]
+	then
+		statement 1
+		.
+		.
+	elif [ expression 2 ]
+	then
+		statement 2
+		.
+		.
+	.
+	.
+	.		
+	elif [ expression n ]
+	then
+		statement n
+		.
+		.	
+	else
+		statement n + 1
+		.
+		.
+	fi
+
+4. Nested If Statement / if..then..else..if..then..fi..fi Statement
+
+Syntax:
+	if [ expression 1 ]
+	then
+		statement 1
+		.
+		.
+	else
+		if [ expression 2 ]
+		then
+			statement 2
+			.
+			.
+		fi
+	fi
+
+5. Switch Staement
+
+Syntax:
+	case var in
+   		Pattern 1) Statement 1;;
+   		Pattern 2) Statement 2;;
+		.
+		.
+   		Pattern n) Statement n;;
+	esac
+
