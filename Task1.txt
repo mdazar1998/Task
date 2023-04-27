@@ -1,0 +1,24 @@
+1. Create a file with .txt extension (/home/demo.txt)
+
+sudo touch /home/demo.txt
+[sudo] password for mdazar:
+
+[mdazar@localhost home]$ ls -lart
+total 0
+dr-xr-xr-x. 17 root   root   224 Feb 19 13:22 ..
+drwx------.  2 vroot2 vroot2  83 Mar  4 12:55 vroot2
+drwxrw-r--.  7 mdazar mdazar 263 Mar  5 14:39 mdazar
+-rw-r--r--.  1 root   root     0 Mar  5 14:43 demo.txt ------- " Only the owner can read and write, Group can read and also any user can read by default"
+drwxr-xr-x.  4 root   root    50 Mar  5 14:43 .
+
+2.Change the permission set if that file, so that any user can read it, group can read/write & owner can read/write/execute it.
+
+[mdazar@localhost home]$ sudo chmod 764 demo.txt --- Here I have used Absolute(Numeric) method.
+
+[mdazar@localhost home]$ ls -lart
+total 0
+dr-xr-xr-x. 17 root   root   224 Feb 19 13:22 ..
+drwx------.  2 vroot2 vroot2  83 Mar  4 12:55 vroot2
+drwxrw-r--.  7 mdazar mdazar 263 Mar  5 14:39 mdazar
+-rwxrw-r--.  1 root   root     0 Mar  5 14:43 demo.txt ------------ " The Owner can read, write and excute ; Group can read and write ; any user can read"  
+drwxr-xr-x.  4 root   root    50 Mar  5 14:43 .

@@ -1,0 +1,107 @@
+1. Get me IP address of particular domain (guvi.in)
+
+[mdazar@localhost Task]$ nslookup guvi.in
+Server:         192.168.150.221
+Address:        192.168.150.221#53
+
+Non-authoritative answer:
+Name:   guvi.in
+Address: 104.21.95.95
+Name:   guvi.in
+Address: 172.67.144.22
+Name:   guvi.in
+Address: 2606:4700:839f:101b:b83b:4b1:7e7b:e151
+
+2.How do I find my CPU/memory usage of my server?
+
+[mdazar@localhost Task]$ top
+top - 16:35:31 up  2:01,  2 users,  load average: 0.00, 0.01, 0.05
+Tasks:  93 total,   1 running,  92 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.3 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st        KiB Mem :  3880404 total,  3185244 free,   254008 used,   441152 buff/cache
+KiB Swap:   839676 total,   839676 free,        0 used.  3375580 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
+ 1958 mdazar    20   0  128552   1488   1132 S  0.3  0.0   0:00.42 ping
+ 2517 mdazar    20   0  162076   2200   1540 R  0.3  0.1   0:00.01 top
+    1 root      20   0  128136   6748   4184 S  0.0  0.2   0:01.13 systemd
+    2 root      20   0       0      0      0 S  0.0  0.0   0:00.01 kthreadd
+    4 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 kworker/0:0H
+    6 root      20   0       0      0      0 S  0.0  0.0   0:00.39 ksoftirqd/0
+    7 root      rt   0       0      0      0 S  0.0  0.0   0:00.00 migration/0
+    8 root      20   0       0      0      0 S  0.0  0.0   0:00.00 rcu_bh
+    9 root      20   0       0      0      0 S  0.0  0.0   0:00.44 rcu_sched
+   10 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 lru-add-drain
+   11 root      rt   0       0      0      0 S  0.0  0.0   0:00.10 watchdog/0
+   13 root      20   0       0      0      0 S  0.0  0.0   0:00.00 kdevtmpfs
+   14 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 netns
+   15 root      20   0       0      0      0 S  0.0  0.0   0:00.00 khungtaskd
+   16 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 writeback
+   17 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 kintegrityd
+   18 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 bioset
+   19 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 bioset
+   20 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 bioset
+   21 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 kblockd
+   22 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 md
+   23 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 edac-poller
+   24 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 watchdogd
+   30 root      20   0       0      0      0 S  0.0  0.0   0:00.00 kswapd0
+   31 root      25   5       0      0      0 S  0.0  0.0   0:00.00 ksmd
+   32 root      39  19       0      0      0 S  0.0  0.0   0:00.07 khugepaged
+   33 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 crypto
+   41 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 kthrotld
+   42 root      20   0       0      0      0 S  0.0  0.0   0:00.11 kworker/u2:1
+   43 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 kmpath_rdacd
+   44 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 kaluad
+   45 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 kpsmoused
+   46 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 ipv6_addrconf
+   60 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 deferwq
+   94 root      20   0       0      0      0 S  0.0  0.0   0:00.00 kauditd
+  256 root      20   0       0      0      0 S  0.0  0.0   0:00.13 kworker/u2:2
+  271 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 ata_sff
+
+
+3.Test the connectivity between 2 nodes?
+
+Node 1:
+
+PS C:\Users\moham> ping 192.168.150.145
+
+Pinging 192.168.150.145 with 32 bytes of data:
+Reply from 192.168.150.145: bytes=32 time<1ms TTL=64
+Reply from 192.168.150.145: bytes=32 time=1ms TTL=64
+Reply from 192.168.150.145: bytes=32 time=1ms TTL=64
+Reply from 192.168.150.145: bytes=32 time=1ms TTL=64
+
+Ping statistics for 192.168.150.145
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+
+Node 2: 
+
+[mdazar@localhost Task]$ ping  192.168.150.30
+PING 192.168.150.30 (192.168.150.30) 56(84) bytes of data.
+^C
+--- 192.168.150.30 ping statistics ---
+20 packets transmitted, 0 received, 100% packet loss, time 19026ms
+
+
+
+
+
+4.I have deployed an application in guvi.com:9000, 
+and logs shows my app is running, but I’m unable to view the page. 
+Check whether my port is open or not ?
+
+[mdazar@localhost Task]$ nmap -p 9000 guvi.in
+
+Starting Nmap 6.40 ( http://nmap.org ) at 2023-03-05 16:39 IST
+Nmap scan report for guvi.in (172.67.144.22)
+Host is up (0.24s latency).
+Other addresses for guvi.in (not scanned): 104.21.95.95
+PORT     STATE    SERVICE
+9000/tcp filtered cslistener
+
+Nmap done: 1 IP address (1 host up) scanned in 2.36 seconds
+
+Note: Since the State Is filtered condition, the port is not connected

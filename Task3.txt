@@ -1,0 +1,83 @@
+1.Create a shell script to print the HTTP error code of guvi.in & print, 
+the success/failure message based on the error code response 
+
+
+[mdazar@localhost Task]$ cat Task3.sh
+#!/bin/bash
+
+read -p  "Enter the link to check the HTTP error code :"  URL
+
+x=$(curl --write-out %{http_code} --silent --output /dev/null $URL)
+
+if [ "$x" == 200 ]
+then
+        echo "The Reponse code of $URL is : $x "
+        echo "The HTTP Connection is Success for the provided url : $URL"
+else
+        echo "The Reponse code of $URL is : $x "
+        echo "The HTTP Connection is Failure for the provided url : $URL"
+fi
+exit
+
+
+[mdazar@localhost Task]$ ./Task3.sh
+Enter the link to check the HTTP error code :www.google.com
+The Response code of www.google.com is : 200
+The HTTP Connection is Success for the provided url : www.google.com
+
+[mdazar@localhost Task]$ ./Task3.sh
+Enter the link to check the HTTP error code :www.guvi.com
+The Response code of www.guvi.com is : 301
+The HTTP Connection is Failure for the provided url : www.guvi.com
+
+
+
+
+2.Given a file, replace all occurrence of the word ""give"" with ""learning"" 
+from 5th line till the end in only those lines that contain the word "welcome"
+
+[mdazar@localhost Task]$ cat Task3-Q2.sh
+
+Line1: Hi Good Noon all,
+Line2: This is Mohamed Azarudeen
+Line3: I here to do my Task3 Question Number: 2
+Line4: Given a file, replace all occurrence of the word ""give"" with ""learning"" from 5th line till the end in only those lines that contain the word "welcome"
+Line5: welcome to give session
+Line6: The agenda of session is give
+Line7: welcome to give session
+Line8: welcome The agenda of session is give
+Line9: welcome The agenda of session is give
+Line10: The agenda of session is give
+Line11: Welcome session "give"
+
+[mdazar@localhost Task]$ sed -e '/welcome/{5,$s/give/learning/g}' Task3-Q2.sh > Task3.txt
+
+[mdazar@localhost Task]$ cat Task3.txt
+
+Line1: Hi Good Noon all,
+Line2: This is Mohamed Azarudeen
+Line3: I here to do my Task3 Question Number: 2
+Line4: Given a file, replace all occurrence of the word ""give"" with ""learning"" from 5th line till the end in only those lines that contain the word "welcome"
+Line5: welcome to learning session
+Line6: The agenda of session is give
+Line7: welcome to learning session
+Line8: welcome The agenda of session is learning
+Line9: welcome The agenda of session is learning
+Line10: The agenda of session is give
+Line11: Welcome session "give"
+
+[mdazar@localhost Task]$ sed -e '/[Ww]elcome/{5,$s/give/learning/g}' Task3-Q2.sh > Task3.txt
+
+[mdazar@localhost Task]$ cat Task3.txt
+
+Line1: Hi Good Noon all,
+Line2: This is Mohamed Azarudeen
+Line3: I here to do my Task3 Question Number: 2
+Line4: Given a file, replace all occurrence of the word ""give"" with ""learning"" from 5th line till the end in only those lines that contain the word "welcome"
+Line5: welcome to learning session
+Line6: The agenda of session is give
+Line7: welcome to learning session
+Line8: welcome The agenda of session is learning
+Line9: welcome The agenda of session is learning
+Line10: The agenda of session is give
+Line11: Welcome session "learning"
